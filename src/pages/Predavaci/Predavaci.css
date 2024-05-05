@@ -1,0 +1,15 @@
+.predavaci {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5px;
+  gap: 5px;
+}
+
+.sidebar {
+  width: 20%;
+}
+
+.predavaci {
+  width: 80%;
+}

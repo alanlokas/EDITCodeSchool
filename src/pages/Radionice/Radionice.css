@@ -1,0 +1,21 @@
+.nav {
+  position: sticky;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 20%;
+}
+
+.radionice {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5px;
+  gap: 5px;
+  width: 80%;
+}

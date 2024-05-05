@@ -1,0 +1,32 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.meni {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: start;
+  width: 80%;
+  padding: 1px 30px;
+}
+
+.slider {
+  width: 50px;
+}
+
+.role {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: end;
+}

@@ -1,0 +1,7 @@
+.sidebar-menu {
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+  justify-content: start;
+  gap: 15px;
+}

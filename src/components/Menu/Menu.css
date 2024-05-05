@@ -1,0 +1,6 @@
+.admin {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  height: 50px;
+}

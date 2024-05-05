@@ -1,0 +1,132 @@
+{
+  "predavaci": [
+    {
+      "id": "1",
+      "ime": "Nenad Nenadić",
+      "bio": "Lorem ipson 77",
+      "organizacija": "Locastic",
+      "teme": [
+        "React",
+        "Express"
+      ]
+    },
+    {
+      "id": "2",
+      "ime": "Neno Nenić",
+      "bio": "Lorem ipson 50",
+      "organizacija": "Lorem Ipsum3",
+      "teme": [
+        "Express",
+        "React",
+        "PHP",
+        "Wordpress"
+      ]
+    },
+    {
+      "id": "3",
+      "ime": "Mario Marić",
+      "bio": "Lorem ipson 90",
+      "organizacija": "Lorem Ipsum2",
+      "teme": [
+        "Wordpress",
+        "PHP"
+      ]
+    },
+    {
+      "id": "4",
+      "ime": "Ante Antić",
+      "bio": "Lorem ipson 777",
+      "organizacija": "Lorem Ipsum3",
+      "teme": [
+        "React",
+        "PHP"
+      ]
+    }
+  ],
+  "organizacije": [
+    {
+      "id": "1",
+      "ime": "Digitalna Dalmacija"
+    },
+    {
+      "id": "2",
+      "ime": "Locastic"
+    },
+    {
+      "id": "3",
+      "ime": "Lorem Ipsum1"
+    },
+    {
+      "id": "4",
+      "ime": "Lorem Ipsum2"
+    },
+    {
+      "id": "5",
+      "ime": "Lorem Ipsum3"
+    }
+  ],
+  "teme": [
+    {
+      "id": "1",
+      "ime": "React"
+    },
+    {
+      "id": "2",
+      "ime": "Express"
+    },
+    {
+      "id": "3",
+      "ime": "PHP"
+    },
+    {
+      "id": "4",
+      "ime": "Wordpress"
+    }
+  ],
+  "tezine": [
+    {
+      "id": "junior",
+      "ime": "Junior"
+    },
+    {
+      "id": "mid",
+      "ime": "Mid"
+    },
+    {
+      "id": "senior",
+      "ime": "Senior"
+    }
+  ],
+  "radionice": [
+    {
+      "id": "radionica_1",
+      "ime": "Radionica 1",
+      "datum": "01.01.2025",
+      "predavac": "predavac_1",
+      "opis": "Kratki opis radionice 1",
+      "tezina": "Mid",
+      "teme": "PHP",
+      "broj_prijava": 0
+    },
+    {
+      "id": "radionica_2",
+      "ime": "Radionica 2",
+      "datum": "01.10.2024",
+      "predavac": "predavac_2",
+      "opis": "Kratki opis radionice 2",
+      "tezina": "Junior",
+      "teme": "PHP",
+      "broj_prijava": 0
+    },
+    {
+      "id": "radionica_3",
+      "ime": "Radionica 3",
+      "datum": "01.10.2025",
+      "predavac": "predavac_1",
+      "opis": "Kratki opis radionice 3",
+      "tezina": "Senior",
+      "teme": "React",
+      "broj_prijava": 0
+    }
+  ]
+}
