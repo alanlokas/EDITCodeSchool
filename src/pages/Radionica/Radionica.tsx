@@ -3,9 +3,20 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./Radionica.css";
 
+interface Radionica {
+  id: string;
+  ime: string;
+  datum: string;
+  predavac: string;
+  opis: string;
+  tezina: string;
+  teme: string[];
+  broj_prijava: number;
+}
+
 export default function Radionica() {
-  const [radionica, setRadionica] = useState([]);
-  const { id } = useParams();
+  const [radionica, setRadionica] = useState<Radionica | null>(null);
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     let url = `http://localhost:3001/radionice/${id}`;

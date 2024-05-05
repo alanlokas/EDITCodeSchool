@@ -3,8 +3,13 @@ import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 import "./Teme.css";
 
+interface Tema {
+  id: string;
+  ime: string;
+}
+
 export default function Teme() {
-  const [teme, setTeme] = useState([]);
+  const [teme, setTeme] = useState<Tema[]>([]);
   const lokacija = useLocation();
 
   useEffect(() => {

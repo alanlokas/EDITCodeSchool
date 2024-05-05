@@ -11,20 +11,25 @@ import Home from "./pages/Home/Home";
 import UserContext from "./context/userContext";
 import axios from "axios";
 
+type UserContextValue = [
+  string | null,
+  React.Dispatch<React.SetStateAction<string | null>>
+];
+
 function App() {
-  const [user, setUser] = useState("Korisnik");
-  const [organizacije, setOrganizacije] = useState([]);
+  const [user, setUser] = useState<string | null>("Korisnik");
+  const [organizacije, setOrganizacije] = useState<any[]>([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/organizacije/")
+      .get<any[]>("http://localhost:3001/organizacije/")
       .then((res) => setOrganizacije(res.data)); //kad podaci dođu šta raditi
     console.log(organizacije);
     console.log(user);
   }, []);
 
   return (
-    <UserContext.Provider value={[user, setUser]}>
+    <UserContext.Provider value={[user, setUser] as UserContextValue}>
       <Routes>
         <Route path="/" element={<Home />} />
 

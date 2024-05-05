@@ -4,7 +4,18 @@ import { useContext } from "react";
 import UserContext from "../../context/userContext";
 import { Link } from "react-router-dom";
 
-export default function RadionicaCard({
+interface RadionicaCardProps {
+  id: number;
+  ime: string;
+  datum: string;
+  predavac: string;
+  opis: string;
+  tezina: string;
+  teme: string;
+  broj_prijava: number;
+}
+
+const RadionicaCard = ({
   id,
   ime,
   datum,
@@ -13,7 +24,7 @@ export default function RadionicaCard({
   tezina,
   teme,
   broj_prijava,
-}) {
+}: RadionicaCardProps) => {
   const [user, setUser] = useContext(UserContext);
   return (
     <div className="radionica">
@@ -55,4 +66,6 @@ export default function RadionicaCard({
       </div>
     </div>
   );
-}
+};
+
+export default RadionicaCard;

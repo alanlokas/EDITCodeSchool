@@ -1,6 +1,17 @@
 import "./RedakTabliceOrganizacije.css";
 
-function RedakTabliceOrganizacije({ organizacije }) {
+interface Organizacija {
+  ime: string;
+  broj_prijava: number;
+  datum: string;
+}
+
+interface Props {
+  organizacije: Organizacija;
+}
+
+function RedakTabliceOrganizacije(props: Props) {
+  const { organizacije } = props;
   return (
     <tr className="redak">
       <td>{organizacije.ime}</td>
@@ -12,7 +23,6 @@ function RedakTabliceOrganizacije({ organizacije }) {
       <td>
         <button>Uredi</button>
       </td>
-      {/* <button onClick={() => obrisiRezervacije(rez.id)}>Obriši</button> */}
     </tr>
   );
 }

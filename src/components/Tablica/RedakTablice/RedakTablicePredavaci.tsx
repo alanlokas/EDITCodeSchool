@@ -1,6 +1,15 @@
 import "./RedakTablicePredavaci.css";
 
-function RedakTablicePredavaci({ predavaci }) {
+interface Predavac {
+  ime: string;
+}
+
+interface Props {
+  predavaci: Predavac;
+}
+
+function RedakTablicePredavaci(props: Props) {
+  const { predavaci } = props;
   return (
     <tr className="redak">
       <td>{predavaci.ime}</td>
@@ -10,7 +19,6 @@ function RedakTablicePredavaci({ predavaci }) {
       <td>
         <button>Uredi</button>
       </td>
-      {/* <button onClick={() => obrisiRezervacije(rez.id)}>Obriši</button> */}
     </tr>
   );
 }

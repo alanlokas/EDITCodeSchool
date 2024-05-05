@@ -8,15 +8,26 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
 
+interface Radionica {
+  id: string;
+  ime: string;
+  datum: string;
+  predavac: string;
+  opis: string;
+  tezina: string;
+  teme: string[];
+  broj_prijava: number;
+}
+
 export default function Radionice() {
-  const [radionice, setRadionice] = useState([]);
+  const [radionice, setRadionice] = useState<Radionica[]>([]);
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         let url = "http://localhost:3001/radionice";
-        const response = await axios.get(url);
+        const response = await axios.get<Radionica[]>(url);
         let filteredRadionice = response.data;
 
         // Provjeri postoji li parametar tezina u search params

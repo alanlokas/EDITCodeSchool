@@ -3,7 +3,6 @@ import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../../context/userContext";
-import Menu from "../../components/Menu/Menu";
 import TablicaRadionice from "../../components/Tablica/Tablica/TablicaRadionice";
 import TablicaOrganizacije from "../../components/Tablica/Tablica/TablicaOrganizacije";
 import TablicaPredavaci from "../../components/Tablica/Tablica/TablicaPredavaci";
@@ -22,19 +21,19 @@ export default function Administracija() {
   useEffect(() => {
     axios
       .get("http://localhost:3001/radionice/")
-      .then((res1) => setRadionice(res1.data)); //kad podaci dođu šta raditi
+      .then((res1) => setRadionice(res1.data));
   }, []);
 
   useEffect(() => {
     axios
       .get("http://localhost:3001/organizacije/")
-      .then((res2) => setOrganizacije(res2.data)); //kad podaci dođu šta raditi
+      .then((res2) => setOrganizacije(res2.data));
   }, []);
 
   useEffect(() => {
     axios
       .get("http://localhost:3001/predavaci/")
-      .then((res3) => setPredavaci(res3.data)); //kad podaci dođu šta raditi
+      .then((res3) => setPredavaci(res3.data));
   }, []);
 
   return (
@@ -42,7 +41,6 @@ export default function Administracija() {
       <Nav />
       {user === "Admin" && (
         <>
-          {/* <Menu natpis={"Meni tipke"} /> */}
           <div className="admin-content">
             <div className="admin-meni">
               <ul>
@@ -64,7 +62,7 @@ export default function Administracija() {
                 Radionice
                 <TablicaRadionice
                   radionice={radionice}
-                  // obrisiRezervacije={obrisiRezervacije}
+                  // obrisiRadionicu={obrisiRadionicu}
                 />
               </div>
             )}
@@ -73,7 +71,7 @@ export default function Administracija() {
                 Organizacije
                 <TablicaOrganizacije
                   organizacije={organizacije}
-                  // obrisiRezervacije={obrisiRezervacije}
+                  // obrisiOrganizaciju={obrisiOrganizaciju}
                 />
               </div>
             )}
@@ -82,7 +80,7 @@ export default function Administracija() {
                 Predavači
                 <TablicaPredavaci
                   predavaci={predavaci}
-                  // obrisiRezervacije={obrisiRezervacije}
+                  // obrisiPredavaca={obrisiPredavaca}
                 />
               </div>
             )}

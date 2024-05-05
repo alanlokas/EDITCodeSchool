@@ -7,12 +7,36 @@ import axios from "axios";
 import Modal from "react-modal";
 import "./Predavac.css";
 
+interface Predavac {
+  id: string;
+  ime: string;
+  bio: string;
+  organizacija: string;
+  teme: string[];
+}
+
+interface Organizacija {
+  id: string;
+  ime: string;
+}
+
+interface Tema {
+  id: string;
+  ime: string;
+}
+
 export default function Predavac() {
   const [user, setUser] = useContext(UserContext);
-  const { id } = useParams();
-  const [predavac, setPredavac] = useState({});
-  const [organizacije, setOrganizacije] = useState([]);
-  const [sveTeme, setSveTeme] = useState([]);
+  const { id } = useParams<{ id: string }>();
+  const [predavac, setPredavac] = useState<Predavac>({
+    id: "",
+    ime: "",
+    bio: "",
+    organizacija: "",
+    teme: [],
+  });
+  const [organizacije, setOrganizacije] = useState<Organizacija[]>([]);
+  const [sveTeme, setSveTeme] = useState<Tema[]>([]);
   const [novaTema, setNovaTema] = useState("");
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
@@ -24,9 +48,9 @@ export default function Predavac() {
       try {
         const [predavacResponse, organizacijeResponse, temeResponse] =
           await Promise.all([
-            axios.get(`http://localhost:3001/predavaci/${id}`),
-            axios.get("http://localhost:3001/organizacije"),
-            axios.get("http://localhost:3001/teme"),
+            axios.get<Predavac>(`http://localhost:3001/predavaci/${id}`),
+            axios.get<Organizacija[]>("http://localhost:3001/organizacije"),
+            axios.get<Tema[]>("http://localhost:3001/teme"),
           ]);
         setPredavac(predavacResponse.data);
         setOrganizacije(organizacijeResponse.data);
@@ -38,7 +62,7 @@ export default function Predavac() {
     fetchData();
   }, [id]);
 
-  const promjenaUlaza = (event) => {
+  const promjenaUlaza = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setPredavac((prevState) => ({
       ...prevState,
@@ -46,7 +70,7 @@ export default function Predavac() {
     }));
   };
 
-  const dodajTemu = (temaId) => {
+  const dodajTemu = (temaId: string) => {
     if (temaId !== "") {
       if (!predavac.teme.includes(temaId)) {
         setPredavac((prevState) => ({
@@ -59,7 +83,7 @@ export default function Predavac() {
     }
   };
 
-  const ukloniTemu = (temaId) => {
+  const ukloniTemu = (temaId: string) => {
     setPredavac((prevState) => ({
       ...prevState,
       teme: prevState.teme.filter((tema) => tema !== temaId),

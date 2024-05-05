@@ -1,4 +1,3 @@
-import React from "react";
 import "./Uvod.css";
 
 export default function () {

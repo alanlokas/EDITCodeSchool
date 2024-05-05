@@ -1,6 +1,17 @@
 import "./RedakTabliceRadionice.css";
 
-function RedakTabliceRadionice({ radionice }) {
+interface Radionica {
+  ime: string;
+  broj_prijava: number;
+  datum: string;
+}
+
+interface Props {
+  radionice: Radionica;
+}
+
+function RedakTabliceRadionice(props: Props) {
+  const { radionice } = props;
   return (
     <tr className="redak">
       <td>{radionice.ime}</td>
@@ -12,7 +23,6 @@ function RedakTabliceRadionice({ radionice }) {
       <td>
         <button>Uredi</button>
       </td>
-      {/* <button onClick={() => obrisiRezervacije(rez.id)}>Obriši</button> */}
     </tr>
   );
 }

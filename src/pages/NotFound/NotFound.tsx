@@ -1,4 +1,3 @@
-import React from "react";
 import "./NotFound.css";
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
@@ -8,8 +7,8 @@ export default function NotFound() {
   return (
     <div>
       <Nav />
-      <Menu />
-      <div className="content">
+      <Menu natpis={""} />
+      <div className="content-404">
         <div>
           <b>404</b>Page Not Found
         </div>

@@ -3,8 +3,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Tezine.css";
 
+interface Tezina {
+  id: string;
+  ime: string;
+}
+
 export default function Tezine() {
-  const [tezine, setTezine] = useState([]);
+  const [tezine, setTezine] = useState<Tezina[]>([]);
 
   useEffect(() => {
     axios
@@ -16,7 +21,7 @@ export default function Tezine() {
     <div className="tezine">
       <h4>Težina</h4>
       <ul>
-        {tezine.map((tezina, id) => (
+        {tezine.map((tezina) => (
           <li key={tezina.id}>
             <Link to={`/radionice?tezina=${tezina.ime}`}>{tezina.ime}</Link>
           </li>

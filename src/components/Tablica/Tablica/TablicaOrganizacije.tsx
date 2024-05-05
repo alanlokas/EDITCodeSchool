@@ -1,6 +1,17 @@
 import RedakTabliceOrganizacije from "../RedakTablice/RedakTabliceOrganizacije";
 
-const TablicaOrganizacije = ({ organizacije }) => {
+interface Organizacija {
+  id: string;
+  ime: string;
+  // Dodaj ostale potrebne propertije za organizaciju
+}
+
+interface Props {
+  organizacije: Organizacija[];
+}
+
+function TablicaOrganizacije(props: Props) {
+  const { organizacije } = props;
   return (
     <table>
       <thead>
@@ -13,51 +24,12 @@ const TablicaOrganizacije = ({ organizacije }) => {
           <RedakTabliceOrganizacije
             key={org.id}
             organizacije={org}
-            // obrisiRezervacije={obrisiRezervacije}
+            // obrisiOrganizacije={obrisiOrganizacije}
           />
         ))}
       </tbody>
     </table>
   );
-};
+}
 
 export default TablicaOrganizacije;
-
-// import RedakTablice from "./RedakTablice";
-
-// type Rezervacija = {
-//   id: number;
-//   ime: string;
-//   prezime: string;
-//   polaziste: string;
-//   odrediste: string;
-//   klasa: string;
-// };
-
-// type TablicaProps = {
-//   rezervacije: Rezervacija[];
-// };
-
-// const Tablica = ({ rezervacije }: TablicaProps) => {
-//   return (
-//     <table>
-//       <thead>
-//         <tr>
-//           <th>ID</th>
-//           <th>Ime</th>
-//           <th>Prezime</th>
-//           <th>Polazište</th>
-//           <th>Odredište</th>
-//           <th>Klasa</th>
-//         </tr>
-//       </thead>
-//       <tbody>
-//         {rezervacije.map((r) => (
-//           <RedakTablice key={r.id} rez={r} />
-//         ))}
-//       </tbody>
-//     </table>
-//   );
-// };
-
-// export default Tablica;

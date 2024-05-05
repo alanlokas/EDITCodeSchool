@@ -3,7 +3,11 @@ import { useContext } from "react";
 import UserContext from "../../context/userContext";
 import { Link } from "react-router-dom";
 
-export default function Menu({ natpis }) {
+interface MenuProps {
+  natpis: string;
+}
+
+const Menu = ({ natpis }: MenuProps) => {
   const [user, setUser] = useContext(UserContext);
   return (
     <div className="admin">
@@ -14,4 +18,6 @@ export default function Menu({ natpis }) {
       )}
     </div>
   );
-}
+};
+
+export default Menu;

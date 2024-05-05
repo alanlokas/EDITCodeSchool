@@ -8,15 +8,23 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
 
+interface Predavac {
+  id: string;
+  ime: string;
+  bio: string;
+  organizacija: string;
+  teme: string[];
+}
+
 export default function Predavaci() {
-  const [predavaci, setPredavaci] = useState([]);
+  const [predavaci, setPredavaci] = useState<Predavac[]>([]);
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         let url = "http://localhost:3001/predavaci";
-        const response = await axios.get(url);
+        const response = await axios.get<Predavac[]>(url);
         let filteredPredavaci = response.data;
 
         // Provjeri postoji li parametar organizacija u search params
