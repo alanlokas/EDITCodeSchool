@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./Radionica.css";
+import Nav from "../../components/Nav/Nav";
 
 interface Radionica {
   id: string;
@@ -32,14 +33,22 @@ export default function Radionica() {
 
   return (
     <div>
-      <div>ID: {radionica.id}</div>
-      <div>Naziv radionice: {radionica.ime}</div>
-      <div>Datum: {radionica.datum}</div>
-      <div>Predavač: {radionica.predavac}</div>
-      <div>Opis: {radionica.opis}</div>
-      <div>Težina: {radionica.tezina}</div>
-      <div>Teme: {radionica.teme}</div>
-      <div>Broj prijava: {radionica.broj_prijava}</div>
+      <Nav />
+      <div>
+        <div>ID: {radionica.id}</div>
+        <div>
+          Naziv radionice:
+          <h2>
+            <b>{radionica.ime}</b>
+          </h2>
+        </div>
+        <div>Datum: {radionica.datum}</div>
+        <div>Predavač: {radionica.predavac}</div>
+        <div>Opis: {radionica.opis}</div>
+        <div>Težina: {radionica.tezina}</div>
+        <div>Teme: {radionica.teme}</div>
+        <div>Broj prijava: {radionica.broj_prijava}</div>
+      </div>
     </div>
   );
 }

@@ -5,8 +5,8 @@ export default function () {
     <div>
       <img
         src={Logo}
-        height={"50px"}
-        width={"50px"}
+        height={"auto"}
+        width={"80px"}
         style={{ borderRadius: "50%" }}
       />
     </div>

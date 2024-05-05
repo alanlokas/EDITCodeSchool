@@ -197,7 +197,7 @@ export default function Predavac() {
               <div>Ime i prezime: {predavac.ime}</div>
               <div>Bio: {predavac.bio}</div>
               <div>Organizacija: {predavac.organizacija}</div>
-              <div>Teme: {predavac.tema}</div>
+              <div>Teme: {predavac.teme}</div>
             </>
           )}
           {radnja === "novi" && (
