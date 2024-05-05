@@ -45,9 +45,13 @@ This will start the JSON Server on http://localhost:3001/ with the data from src
 
 Endpoints:
 http://localhost:3001/predavaci
+
 http://localhost:3001/organizacije
+
 http://localhost:3001/teme
+
 http://localhost:3001/tezine
+
 http://localhost:3001/radionice
 
 Contributing
